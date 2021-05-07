@@ -1,4 +1,4 @@
-package main
+package scenegraph
 
 import (
 	"github.com/gravestench/mathlib"

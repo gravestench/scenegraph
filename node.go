@@ -25,7 +25,9 @@ type Node struct {
 
 // SetParent sets the parent of this scene graph node
 func (n *Node) SetParent(p *Node) *Node {
-	n.parent.removeChild(n)
+	if n.parent != nil {
+		n.parent.removeChild(n)
+	}
 
 	n.parent = p
 
@@ -37,10 +39,6 @@ func (n *Node) SetParent(p *Node) *Node {
 }
 
 func (n *Node) removeChild(m *Node) *Node {
-	if n == nil {
-		return nil
-	}
-
 	if m == nil {
 		return n
 	}
